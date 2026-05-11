@@ -1,0 +1,11 @@
+MPI COMMANDS
+
+sudo apt install openjdk-8-jdk
+wget https://downloads.sourceforge.net/project/mpjexpress/releases/mpj-v0_44.tar.gz
+tar -xvf mpj-v0_44.tar.gz
+cd mpj-v0_44
+export MPJ_HOME=$PWD
+export PATH=$PATH:$MPJ_HOME/bin
+cd ~/MPIProject/src
+javac -cp .:$MPJ_HOME/lib/mpj.jar ArraySumMPI.java
+mpjrun.sh -np 4 ArraySumMPI

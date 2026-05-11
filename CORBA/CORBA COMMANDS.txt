@@ -1,0 +1,13 @@
+CORBA COMMANDS
+
+sudo apt update
+sudo apt install openjdk-8-jdk
+java -version
+cd ~/CORBA
+idlj -fall StringReverse.idl
+javac *.java
+orbd -ORBInitialPort 1050(new terminal)
+again new terminal cd ~/CORBA
+java StringServer -ORBInitialPort 1050 -ORBInitialHost localhost
+new terminal cd ~/CORBA
+java StringClient -ORBInitialPort 1050 -ORBInitialHost localhost
